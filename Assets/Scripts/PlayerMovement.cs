@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update(){
         speed = Input.GetAxisRaw("Horizontal");
 
+        //If user wants to jump
         if (Input.GetButtonDown("Jump") && IsGrounded()){
             Jump();
         }
