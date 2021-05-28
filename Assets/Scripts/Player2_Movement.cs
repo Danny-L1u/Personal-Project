@@ -1,8 +1,11 @@
+//Code taken from https://www.youtube.com/watch?v=ZvF_MYlt944&list=PLfX6C2dxVyLw5kerGvTxB-8xqVINe85gw&index=2 
+//and https://www.youtube.com/watch?v=1bHVsxw_o7o&list=PLfX6C2dxVyLw5kerGvTxB-8xqVINe85gw&index=3
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player2Movement : MonoBehaviour
+public class Player2_Movement : MonoBehaviour
 {
     public float movementSpeed;
     public Rigidbody2D rb;
