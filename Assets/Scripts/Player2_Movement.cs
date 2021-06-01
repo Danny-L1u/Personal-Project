@@ -7,39 +7,36 @@ using UnityEngine;
 
 public class Player2_Movement : MonoBehaviour
 {
+    //Movement variables
     public float movementSpeed;
-    public Rigidbody2D rb;
-
+    public Rigidbody2D move;
     public Animator anim;
-
+    //Jump variables
     public float jumpForce = 20f;
     public Transform feet;
     public LayerMask groundLayers;
+    float speed;
 
-    float mx;
-
-    bool isGrounded;
-
-    //runs every frame
+    //Runs every frame
     private void Update(){
-        mx = Input.GetAxisRaw("Horizontal2");
+        speed = Input.GetAxisRaw("Horizontal2");
 
-        //Checks if player hits the jump key
+        //If player wants to jump
         if (Input.GetButtonDown("Jump2") && IsGrounded()) {
             Jump();
         }
 
-        if (Mathf.Abs(mx) > 0.05f){
+        if (Mathf.Abs(speed) > 0.05f){
             anim.SetBool("isRunning", true);
         }
         else{
             anim.SetBool("isRunning", false);
         }
 
-        if (mx > 0f){
+        if (speed > 0f){
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
-        else{
+        else if (speed < 0f){
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
 
@@ -47,15 +44,15 @@ public class Player2_Movement : MonoBehaviour
     }
 
 private void FixedUpdate(){
-    Vector2 movement = new Vector2(mx * movementSpeed, rb.velocity.y);
+    Vector2 movement = new Vector2(speed * movementSpeed,move.velocity.y);
 
-    rb.velocity = movement;
+    move.velocity = movement;
 }
     //Jump function
     void Jump() {
-        Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
+        Vector2 movement = new Vector2(move.velocity.x, jumpForce);
 
-        rb.velocity = movement;
+        move.velocity = movement;
     }
 
     //Checks if the player is on the ground, if not then player can't jump

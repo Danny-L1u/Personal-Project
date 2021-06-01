@@ -7,21 +7,21 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //Movement variables
     public float movementSpeed;
     public Rigidbody2D move;
-
     public Animator anim;
-
+    //Jump variables
     public float jumpForce = 20f;
     public Transform feet;
     public LayerMask groundLayers;
-
     float speed;
 
+    //Runs every frame
     private void Update(){
         speed = Input.GetAxisRaw("Horizontal");
 
-        //If user wants to jump
+        //If player wants to jump
         if (Input.GetButtonDown("Jump") && IsGrounded()){
             Jump();
         }
@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
         move.velocity = movement;
     }
 
+    //Checks if the player is on the ground, if not then player can't jump
     public bool IsGrounded (){
         Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, 0.5f, groundLayers);
 

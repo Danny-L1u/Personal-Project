@@ -1,4 +1,9 @@
 //Code taken from https://www.youtube.com/watch?v=sPiVz1k-fEs
+/**
+This script allows the player to use melee attacks. If a player wants to attack 
+the script detects if there are enemies within the attack range and damges them. 
+The script also puts time between attacks so the player cannot spam attacks.
+*/
 
 using System.Collections;
 using System.Collections.Generic;
@@ -9,21 +14,36 @@ public class PlayerCombat : MonoBehaviour
 
     public Animator animator;
 
+    //Attack variables
     public Transform attackPoint;
     public float attackRange = 0.5f;
-    
     public LayerMask enemyLayers;
     public int attackDamage = 40;
+    public float attackRate = 2f;
+    float nextAttackTime = 0f;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Melee"))
+        //Puts a buffer between attacks so player cannot spam attacks
+        if (Time.time >= nextAttackTime)
         {
-            Attack();
+            //If player wants to melee attack (",") activate attack function
+            if (Input.GetButtonDown("Melee"))
+            {
+                Attack();
+                //Ads a buffer between melee attacks
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
         }
     }
 
+    /**
+    This method detects and attacks the player. It plays an attack animation
+    then detects if there are enemies within the attack animation. It does this by
+    taking data from an attackpoint in front of the player in Unity. Then if there 
+    are enemies it access the opposite player's health and lowers it.
+    */
     void Attack()
     {
         //Play an attack animation
@@ -35,10 +55,12 @@ public class PlayerCombat : MonoBehaviour
         //Damage them
         foreach(Collider2D enemy in hitEnemies)
         {
+            //Damage enemy
             enemy.GetComponent<Player2_Health>().TakeDamage(attackDamage);
         }
     }
 
+//This method displays player's attack range when selected
 void OnDrawGizmosSelected()
 {
     if (attackPoint == null)
