@@ -13,9 +13,11 @@ public class Player2_Health : MonoBehaviour
     public Animator animator;
 
     //Health variables
-    public int maxHealth = 100;
+    public int maxHealth;
     int currentHealth;
-    
+    //Health bar variables
+    public Player2_HealthBar healthBar;
+
     [SerializeField]
     private Rigidbody2D rb;
 
@@ -24,6 +26,7 @@ public class Player2_Health : MonoBehaviour
     {
         //Start the player with full health
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth2(maxHealth);
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -35,6 +38,7 @@ public class Player2_Health : MonoBehaviour
     {
         //Take damage
         currentHealth -= damage;
+        healthBar.SetHealth2(currentHealth);
 
         //Play hurt animation
         animator.SetTrigger("Hurt");
