@@ -16,31 +16,35 @@ public class Player2_Movement : MonoBehaviour
     public Transform feet;
     public LayerMask groundLayers;
     float speed;
+    public bool isDead = false;
 
     //Runs every frame
     private void Update(){
-        speed = Input.GetAxisRaw("Horizontal2");
+        if(!isDead){
+            speed = Input.GetAxisRaw("Horizontal2");
 
-        //If player wants to jump
-        if (Input.GetButtonDown("Jump2") && IsGrounded()) {
-            Jump();
-        }
+            //If player wants to jump
+            if (Input.GetButtonDown("Jump2") && IsGrounded()) {
+                Jump();
+            }
 
-        if (Mathf.Abs(speed) > 0.05f){
-            anim.SetBool("isRunning", true);
-        }
-        else{
-            anim.SetBool("isRunning", false);
-        }
+            if (Mathf.Abs(speed) > 0.05f){
+                anim.SetBool("isRunning", true);
+            }
+            else{
+                anim.SetBool("isRunning", false);
+            }
 
-        if (speed > 0f){
-            transform.localScale = new Vector3(1f, 1f, 1f);
-        }
-        else if (speed < 0f){
-            transform.localScale = new Vector3(-1f, 1f, 1f);
-        }
+            //Swap player model depening if player is moving right or left
+            if (speed > 0f){
+                transform.localScale = new Vector3(1f, 1f, 1f);
+            }
+            else if (speed < 0f){
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+            }
 
-        anim.SetBool("isGrounded", IsGrounded());
+            anim.SetBool("isGrounded", IsGrounded());
+        }
     }
 
 private void FixedUpdate(){

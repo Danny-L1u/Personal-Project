@@ -17,6 +17,7 @@ public class Player2_Health : MonoBehaviour
     int currentHealth;
     //Health bar variables
     public Player2_HealthBar healthBar;
+    public Player2_Movement playerMovement;
 
     [SerializeField]
     private Rigidbody2D rb;
@@ -61,6 +62,6 @@ public class Player2_Health : MonoBehaviour
         rb.gravityScale = 0;
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
-
+        playerMovement.isDead = true;
     }
 }

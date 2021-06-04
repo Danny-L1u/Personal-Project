@@ -17,6 +17,7 @@ public class Player_Health : MonoBehaviour
     int currentHealth;
     //Health bar variables
     public Player1_HealthBar healthBar;
+    public PlayerMovement playerMovement;
 
     [SerializeField]
     private Rigidbody2D rb;
@@ -44,7 +45,7 @@ public class Player_Health : MonoBehaviour
         animator.SetTrigger("Hurt");
 
         //Checks if the player is dead
-        if(currentHealth <= 0){
+        if (currentHealth <= 0){
             Die();
         }
     }
@@ -61,6 +62,7 @@ public class Player_Health : MonoBehaviour
         rb.gravityScale = 0;
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
+        playerMovement.isDead = true;
     }
 
 }  

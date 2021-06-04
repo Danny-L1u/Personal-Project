@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Start Menu.unity
     guid: 0760e2dcdf3a14119a0bfb9c2c420e49
   - enabled: 1
-    path: Assets/Practice.unity
+    path: Assets/Game.unity
     guid: 3f24e46026404462abeb849a527aefdc
   m_configObjects: {}
