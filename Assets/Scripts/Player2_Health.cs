@@ -43,9 +43,11 @@ public class Player2_Health : MonoBehaviour
 
         //Play hurt animation
         animator.SetTrigger("Hurt");
+        AudioManager.instance.Play("Player2 Hurt");
 
         //Checks if the player is dead
         if(currentHealth <= 0){
+            AudioManager.instance.Play("Player2 Death");
             Die();
         }
     }

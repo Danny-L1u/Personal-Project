@@ -3289,7 +3289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1097771327}
-  maxHealth: 200
+  maxHealth: 190
   healthBar: {fileID: 1090532176}
   playerMovement: {fileID: 1097771328}
   rb: {fileID: 1097771325}
@@ -3467,26 +3467,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
       propertyPath: sounds.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
       propertyPath: sounds.Array.data[2].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 6025bba36a0ed459894138dd27e4f0b5, type: 3}
+      objectReference: {fileID: 8300000, guid: b497c24b763bc4b5c9865a55ed456c64, type: 3}
     - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
       propertyPath: sounds.Array.data[2].loop
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
       propertyPath: sounds.Array.data[2].name
-      value: Fighting Music
+      value: Player1 Hurt
+      objectReference: {fileID: 0}
+    - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
+      propertyPath: sounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7172f629b0bcd4ef98d621daaa85ae68, type: 3}
+    - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
+      propertyPath: sounds.Array.data[3].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
+      propertyPath: sounds.Array.data[3].name
+      value: Player2 Hurt
+      objectReference: {fileID: 0}
+    - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
+      propertyPath: sounds.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b497c24b763bc4b5c9865a55ed456c64, type: 3}
+    - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
+      propertyPath: sounds.Array.data[4].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
+      propertyPath: sounds.Array.data[4].name
+      value: Player2 Hurt
       objectReference: {fileID: 0}
     - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
       propertyPath: sounds.Array.data[2].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
+      propertyPath: sounds.Array.data[3].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
+      propertyPath: sounds.Array.data[4].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
       propertyPath: sounds.Array.data[2].volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
+      propertyPath: sounds.Array.data[3].volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
+      propertyPath: sounds.Array.data[4].volume
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 68770441443730094, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
