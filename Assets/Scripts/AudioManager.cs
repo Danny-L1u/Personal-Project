@@ -57,12 +57,4 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (Application.loadedLevelName == "Game")
-        {
-            Stop("Menu Music");
-            Play("Fighting Music");
-        }
-    }
 }

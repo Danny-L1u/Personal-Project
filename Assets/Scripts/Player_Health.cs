@@ -30,6 +30,9 @@ public class Player_Health : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         rb = GetComponent<Rigidbody2D>();
+        
+        AudioManager.instance.Stop("Menu Music");
+        AudioManager.instance.Play("Fighting Music");
     }
 
     /**
