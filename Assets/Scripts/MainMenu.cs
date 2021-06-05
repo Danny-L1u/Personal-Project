@@ -9,14 +9,17 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame ()
     { 
-        FindObjectOfType<AudioManager>().Play("Select");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void QuitGame ()
     {
-        FindObjectOfType<AudioManager>().Play("Select");
         Application.Quit();
+    }
+
+    public void PlaySound ()
+    {
+        FindObjectOfType<AudioManager>().Play("Select");
     }
 
 }
