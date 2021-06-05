@@ -1,8 +1,8 @@
 //Code taken from https://www.youtube.com/watch?v=sPiVz1k-fEs
 /**
-This script allows the player to use melee attacks. If a player wants to attack 
-the script detects if there are enemies within the attack range and damges them. 
-The script also puts time between attacks so the player cannot spam attacks.
+This class allows the player to use melee attacks. If a player wants to attack 
+the class detects if there are enemies within the attack range and damges them. 
+The class also puts time between attacks so the player cannot spam attacks.
 */
 
 using System.Collections;
@@ -21,19 +21,23 @@ public class PlayerCombat : MonoBehaviour
     public int attackDamage;
     public float attackRate = 2f;
     float nextAttackTime = 0f;
+    public bool isDead = false;
 
     // Update is called once per frame
     void Update()
     {
-        //Puts a buffer between attacks so player cannot spam attacks
-        if (Time.time >= nextAttackTime)
-        {
-            //If player wants to melee attack (",") activate attack function
-            if (Input.GetButtonDown("Melee"))
+        //Checks if player is alive
+        if (!isDead){
+            //Puts a buffer between attacks so player cannot spam attacks
+            if (Time.time >= nextAttackTime)
             {
-                Attack();
-                //Ads a buffer between melee attacks
-                nextAttackTime = Time.time + 1f / attackRate;
+                //If player wants to melee attack ("c") activate attack function
+                if (Input.GetButtonDown("Melee"))
+                {
+                    Attack();
+                    //Ads a buffer between melee attacks
+                    nextAttackTime = Time.time + 1f / attackRate;
+                }
             }
         }
     }
@@ -53,7 +57,7 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
         //Damage them
-        foreach(Collider2D enemy in hitEnemies)
+        foreach(Collider2D enemy in hitEnemies) 
         {
             //Damage enemy
             enemy.GetComponent<Player2_Health>().TakeDamage(attackDamage);

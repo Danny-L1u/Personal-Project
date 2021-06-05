@@ -962,6 +962,14 @@ PrefabInstance:
       value: Title Screen Music
       objectReference: {fileID: 0}
     - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
+      propertyPath: sounds.Array.data[9].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: bfebe7ebbbec74969bdc3a91e5d40663, type: 3}
+    - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
+      propertyPath: sounds.Array.data[9].name
+      value: Players Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
       propertyPath: sounds.Array.data[0].group
       value: 
       objectReference: {fileID: 24300002, guid: 2bad535f7a91f406ca58cc4802816791, type: 2}
@@ -1026,6 +1034,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
+      propertyPath: sounds.Array.data[9].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
       propertyPath: sounds.Array.data[0].volume
       value: 0.3
       objectReference: {fileID: 0}
@@ -1059,6 +1071,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
       propertyPath: sounds.Array.data[8].volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 68770441443730093, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}
+      propertyPath: sounds.Array.data[9].volume
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 68770441443730094, guid: 465bd63da8ee04e15b352d1830478cd0, type: 3}

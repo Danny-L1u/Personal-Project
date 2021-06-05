@@ -2828,6 +2828,7 @@ MonoBehaviour:
     m_Bits: 512
   attackDamage: 25
   attackRate: 2
+  isDead: 0
 --- !u!114 &887046053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2844,6 +2845,8 @@ MonoBehaviour:
   maxHealth: 175
   healthBar: {fileID: 655216607}
   playerMovement: {fileID: 887046050}
+  playerCombat: {fileID: 887046052}
+  playerShoot: {fileID: 887046054}
   rb: {fileID: 887046048}
 --- !u!114 &887046054
 MonoBehaviour:
@@ -2860,6 +2863,7 @@ MonoBehaviour:
   fireRate: 0.2
   firingPoint: {fileID: 409186808}
   proPrefab: {fileID: 909809549153933624, guid: 366e7370b71b0406885d8478b7a22240, type: 3}
+  isDead: 0
 --- !u!1 &904105836
 GameObject:
   m_ObjectHideFlags: 0
@@ -3291,7 +3295,8 @@ MonoBehaviour:
   animator: {fileID: 1097771327}
   maxHealth: 190
   healthBar: {fileID: 1090532176}
-  playerMovement: {fileID: 1097771328}
+  player2Movement: {fileID: 1097771328}
+  player2Combat: {fileID: 1097771330}
   rb: {fileID: 1097771325}
 --- !u!114 &1097771330
 MonoBehaviour:
@@ -3313,6 +3318,7 @@ MonoBehaviour:
     m_Bits: 128
   attackDamage: 40
   attackRate: 2
+  isDead: 0
 --- !u!1 &1144760555
 GameObject:
   m_ObjectHideFlags: 0

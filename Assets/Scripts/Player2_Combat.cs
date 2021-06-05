@@ -20,19 +20,24 @@ public class Player2_Combat : MonoBehaviour
     public int attackDamage;
     public float attackRate = 2f;
     float nextAttackTime = 0f;
+    public bool isDead = false;
 
     //Update is called once per frame
     void Update()
     {
-        //Puts a buffer between attacks so player cannot spam attacks
-        if (Time.time >= nextAttackTime)
+        //Checks if player is alive
+        if(!isDead)
         {
-            //If player wants to melee attack ("c") activate attack function
-            if (Input.GetButtonDown("Melee2"))
+            //Puts a buffer between attacks so player cannot spam attacks
+            if (Time.time >= nextAttackTime)
             {
-                Attack();
-                //Adds a buffer between melee attacks
-                nextAttackTime = Time.time + 1f / attackRate;
+                //If player wants to melee attack ("c") activate attack function
+                if (Input.GetButtonDown("Melee2"))
+                {
+                    Attack();
+                    //Adds a buffer between melee attacks
+                    nextAttackTime = Time.time + 1f / attackRate;
+                }
             }
         }
     }

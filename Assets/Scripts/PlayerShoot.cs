@@ -10,7 +10,8 @@ public class PlayerShoot : MonoBehaviour
 
     float timeUntilFire;
     PlayerMovement pm;
-    
+    public bool isDead = false;
+
     //Start is called before the first frame update
     private void Start()
     {
@@ -19,10 +20,15 @@ public class PlayerShoot : MonoBehaviour
 
     //Runs every frame
     private void Update(){
-        if (Input.GetButtonDown("Shoot") && (timeUntilFire + 0.3) < Time.time){
-            AudioManager.instance.Play("Player1 Shoot");
-            Shoot();
-            timeUntilFire = Time.time + fireRate;
+
+        //Checks if player is alive
+        if (!isDead)
+        {
+            if (Input.GetButtonDown("Shoot") && (timeUntilFire + 0.3) < Time.time){
+                AudioManager.instance.Play("Player1 Shoot");
+                Shoot();
+                timeUntilFire = Time.time + fireRate;
+            }
         }
     }
 

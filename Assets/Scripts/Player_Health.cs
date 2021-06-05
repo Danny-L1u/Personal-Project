@@ -15,9 +15,12 @@ public class Player_Health : MonoBehaviour
     //Health variables
     public int maxHealth;
     int currentHealth;
-    //Health bar variables
+    //Health bar variable
     public Player1_HealthBar healthBar;
+    //Disable Player when dead variables
     public PlayerMovement playerMovement;
+    public PlayerCombat playerCombat;
+    public PlayerShoot playerShoot;
 
     [SerializeField]
     private Rigidbody2D rb;
@@ -68,6 +71,8 @@ public class Player_Health : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
         playerMovement.isDead = true;
+        playerCombat.isDead = true;
+        playerShoot.isDead = true;
     }
 
 }  

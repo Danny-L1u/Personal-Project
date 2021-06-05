@@ -22,11 +22,12 @@ public class PlayerMovement : MonoBehaviour
 
     //Runs every frame
     private void Update(){
+        //Checks if player is alive
         if(!isDead){
 
             speed = Input.GetAxisRaw("Horizontal");
 
-            //If player wants to jump
+            //Checks if player wants to jump and is touching the ground
             if (Input.GetButtonDown("Jump") && IsGrounded()){
                 Jump();
             }
