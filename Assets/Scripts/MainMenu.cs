@@ -12,6 +12,9 @@ allowing the player to quit the game when "QUIT" is pressed, and allowing all bu
 */
 public class MainMenu : MonoBehaviour
 {
+
+    public TitleScreen ts;
+
     //Progresses to the next scene in Unity, this one allows the player to progress
     //to gameplay
     public void PlayGame ()

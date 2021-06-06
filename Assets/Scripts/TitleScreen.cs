@@ -13,21 +13,19 @@ next Unity scene.
 */
 public class TitleScreen : MonoBehaviour
 {
+    public Animator transition;
     public AudioMixer audioMixer;
 
     //When the game starts set the volume to a specific amount
     void Start(){
-        audioMixer.SetFloat("Volume", 0f);
+        audioMixer.SetFloat("Volume", 5f);
     }
     //When the "START" button is clicked
-       public void PlayGame ()
+       public void PlayGame()
     { 
         FindObjectOfType<AudioManager>().Play("Select");
         AudioManager.instance.Stop("Title Screen Music");
         AudioManager.instance.Play("Menu Music");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
-
     }
-
 }
