@@ -6,11 +6,11 @@ using UnityEngine;
 [System.Serializable]
 
 /**
-
+This class allows me to input sound clips through Unity. Then once inputed I can call on them
+in other scripts so they can be played.
 */
 public class Sound 
 {
-
     public string name;
 
     public AudioClip clip;

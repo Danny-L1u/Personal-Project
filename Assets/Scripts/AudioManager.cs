@@ -15,7 +15,9 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
-
+    /**This method allows me to adjust the audio clips with various aspects of sounds
+    such as volume, pitch, and whether or not the audio clip loops.
+    */
     void Awake()
     {
         if (instance == null)
@@ -49,6 +51,7 @@ public class AudioManager : MonoBehaviour
     public void Play (string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
+        //If the audio clip does not exist
         if (s == null)
         {
         Debug.LogWarning("Sound: " + name + " not found!");

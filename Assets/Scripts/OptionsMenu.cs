@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
+/*
+This class sets the volume slider and volume in the options menu to whatever the volume is at. 
+*/
 public class OptionsMenu : MonoBehaviour
 {    
     public AudioMixer audioMixer;
