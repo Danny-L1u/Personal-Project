@@ -3,10 +3,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /**
 This class keeps track of player health. It starts with a max health then everytime the player
-takes damage the health lowers until it reaches 0 or below 0, which then the player dies.
+takes damage the health lowers until it reaches 0 or below 0, which then the player dies and the
+game transitions to the ending scene.
 */
 
 public class Player_Health : MonoBehaviour
@@ -76,6 +78,11 @@ public class Player_Health : MonoBehaviour
         playerMovement.isDead = true;
         playerCombat.isDead = true;
         playerShoot.isDead = true;
+        //Switch the game music and switch Unity scenes
+        AudioManager.instance.Stop("Fighting Music");
+        SceneManager.LoadScene(4);
+        AudioManager.instance.Play("End Music");
+
     }
 
 }  

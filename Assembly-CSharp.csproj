@@ -39,6 +39,7 @@
      <Compile Include="Assets\Scripts\Player2_Movement.cs" />
      <Compile Include="Assets\Scripts\Player2_Combat.cs" />
      <Compile Include="Assets\Scripts\Player2_Health.cs" />
+     <Compile Include="Assets\Scripts\OptionsMenu.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\PlayerShoot.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
@@ -50,7 +51,8 @@
      <Compile Include="Assets\Scripts\TitleScreen.cs" />
      <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Player2_HealthBar.cs" />
-     <Compile Include="Assets\Scripts\OptionsMenu.cs" />
+     <Compile Include="Assets\Scripts\Player1_Return.cs" />
+     <Compile Include="Assets\Scripts\Player2_Return.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
