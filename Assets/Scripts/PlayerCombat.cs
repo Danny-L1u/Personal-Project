@@ -1,13 +1,14 @@
 //Code taken from https://www.youtube.com/watch?v=sPiVz1k-fEs
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
 /**
 This class allows the player to use melee attacks. If a player wants to attack 
 the class detects if there are enemies within the attack range and damges them. 
 The class also puts time between attacks so the player cannot spam attacks.
 */
-
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class PlayerCombat : MonoBehaviour
     public int attackDamage;
     public float attackRate = 2f;
     float nextAttackTime = 0f;
+
+    //Player state variable
     public bool isDead = false;
 
     // Update is called once per frame
@@ -56,7 +59,7 @@ public class PlayerCombat : MonoBehaviour
         //Detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-        //Damage them
+        //Damage each enemy
         foreach(Collider2D enemy in hitEnemies) 
         {
             //Damage enemy

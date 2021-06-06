@@ -1,12 +1,14 @@
 //Code taken from: https://www.youtube.com/watch?v=sPiVz1k-fEs
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
 /**
 This script allows the player to use melee attacks. If a player wants to attack 
 the script detects if there are enemies within the attack range and damges them. 
 The script also puts time between attacks so the player cannot spam attacks.
 */
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class Player2_Combat : MonoBehaviour
 {
@@ -31,7 +33,7 @@ public class Player2_Combat : MonoBehaviour
             //Puts a buffer between attacks so player cannot spam attacks
             if (Time.time >= nextAttackTime)
             {
-                //If player wants to melee attack ("c") activate attack function
+                //If player wants to melee attack (",") activate attack function
                 if (Input.GetButtonDown("Melee2"))
                 {
                     Attack();
@@ -56,7 +58,7 @@ public class Player2_Combat : MonoBehaviour
         //Detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-        //Detect if there are enemies within range
+        //Damage each enemy
         foreach(Collider2D enemy in hitEnemies)
         {
             //Damage enemy

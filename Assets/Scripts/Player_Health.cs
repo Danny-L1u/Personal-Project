@@ -1,12 +1,13 @@
 //Code taken from: https://www.youtube.com/watch?v=sPiVz1k-fEs
-/**
-This script keeps track of player health. It starts with a max health then everytime the player
-takes damage the health lowers until it reaches 0 or below 0, which then the player dies.
-*/
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+/**
+This class keeps track of player health. It starts with a max health then everytime the player
+takes damage the health lowers until it reaches 0 or below 0, which then the player dies.
+*/
 
 public class Player_Health : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class Player_Health : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
         rb = GetComponent<Rigidbody2D>();
         
+        //Stops the menu music and plays the fighting music
         AudioManager.instance.Stop("Menu Music");
         AudioManager.instance.Play("Fighting Music");
     }
@@ -47,13 +49,13 @@ public class Player_Health : MonoBehaviour
         //Deal damage to player
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
-        //Play hurt animation
+
+        //Play hurt animation and hurt sound effect
         animator.SetTrigger("Hurt");
         AudioManager.instance.Play("Player1 Hurt");
 
         //Checks if the player is dead
         if (currentHealth <= 0){
-            AudioManager.instance.Play("Player1 Death");
             Die();
         }
     }
@@ -63,7 +65,8 @@ public class Player_Health : MonoBehaviour
     */
     void Die()
     {
-        //Die animation
+        //Die animation and death sound effect
+        AudioManager.instance.Play("Player1 Death");
         animator.SetBool("IsDead", true);
 
         //Disable player

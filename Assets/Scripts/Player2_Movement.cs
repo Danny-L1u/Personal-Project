@@ -5,25 +5,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+This class allows the player to move left, right and jump up. It has a certain speed the player
+moves at when moving and a certain max height the player can jump.
+*/
+
 public class Player2_Movement : MonoBehaviour
 {
     //Movement variables
     public float movementSpeed;
     public Rigidbody2D move;
+    //Animator variable
     public Animator anim;
     //Jump variables
     public float jumpForce = 20f;
     public Transform feet;
     public LayerMask groundLayers;
     float speed;
+    //Player state variable
     public bool isDead = false;
 
     //Runs every frame
     private void Update(){
+        
+        //Checks if player is alive
         if(!isDead){
+            //Checks if player wants to move left and right (left arrow, right arrow) 
             speed = Input.GetAxisRaw("Horizontal2");
 
-            //If player wants to jump
+            //Checks if player wants to jump (up arrow) and is touching the ground
             if (Input.GetButtonDown("Jump2") && IsGrounded()) {
                 Jump();
             }
@@ -35,7 +45,7 @@ public class Player2_Movement : MonoBehaviour
                 anim.SetBool("isRunning", false);
             }
 
-            //Swap player model depening if player is moving right or left
+            //Swap player model depending if player is moving right or left
             if (speed > 0f){
                 transform.localScale = new Vector3(1f, 1f, 1f);
             }
